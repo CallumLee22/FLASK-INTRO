@@ -35,9 +35,10 @@
 
     <input class="w3-button w3-teal w3-round-xlarge w3-margin-left" type="submit" value="Calculate!"><br><br>
 </form>
+
 {% if result %}
 <div class="w3-card w3-margin-left" style="width:30%">
-    <h4 class="w3-monospace w3-text-teal">The result is: {{ result }}</h4>
+    <h4 class="w3-monospace w3-text-teal">{{ number1}} {{ op }} {{ number2 }} = {{ result }}</h4>
 </div>
 {% endif %}
 

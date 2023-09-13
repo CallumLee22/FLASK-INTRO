@@ -15,13 +15,13 @@ def form():
         try:
             number1 = int(number1)
         except:
-            return "Input was not a number"
+            return render_template("error.jinja")
 
         number2 = request.form.get("num2")
         try:
             number2 = int(number2)
         except:
-            return "Input was not a number"
+            return render_template("error.jinja")
 
         operation = request.form.get("operation")
 

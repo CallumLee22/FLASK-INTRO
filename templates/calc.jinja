@@ -22,23 +22,23 @@
         id="num2" name="num2"><br><br>
 
     <input class="w3-radio w3-margin-left" type="radio" name="operation" value="add" checked>
-    <label>Add</label>
+    <label class="w3-text-teal">Add</label>
 
     <input class="w3-radio" type="radio" name="operation" value="subtract">
-    <label>Subtract</label>
+    <label class="w3-text-teal">Subtract</label>
 
     <input class="w3-radio" type="radio" name="operation" value="multiply">
-    <label>Multiply</label>
+    <label class="w3-text-teal">Multiply</label>
 
     <input class="w3-radio" type="radio" name="operation" value="divide">
-    <label>Divide</label>
+    <label class="w3-text-teal">Divide</label>
 
     <input class="w3-button w3-teal w3-round-xlarge w3-margin-left" type="submit" value="Calculate!"><br><br>
 </form>
 
 {% if result %}
-<div class="w3-card w3-margin-left" style="width:30%">
-    <h4 class="w3-monospace w3-text-teal">{{ number1}} {{ op }} {{ number2 }} = {{ result }}</h4>
+<div class="w3-container w3-margin-left w3-teal" style="width:30%">
+    <h4 class="w3-monospace">{{ number1}} {{ op }} {{ number2 }} = {{ result }}</h4>
 </div>
 {% endif %}
 

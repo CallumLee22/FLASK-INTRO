@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<title>Calculator</title>
 
-    <head>
-        <style>
-        .heading{
-            color: rgb(126, 88, 6);
-            font-size: x-large;
-            font-style: italic;
-        }
-        body{
-            background-color: rgb(241, 224, 202);
-        }
-        .input_box{
-             box-shadow: 2.5px 5px;
-             border: 2px solid grey;
-        }
-        .clickables{
-            box-shadow: 2.5px 5px;
-            cursor: pointer;
-        }
-        </style>
-    </head>
-    <body>
-        <h3 class=heading>Please enter your name</h3>
-    </body>
-    
-    <form>
-        <label for="fname">First Name:</label><br>
-        <input class="input_box" type="text" id="fname" name="fname"><br><br>
-        <label for="lname">Last Name:</label><br>
-        <input class="input_box" type="text" id="lname" name="lname"><br><br>
-        <input class="clickables" type="submit" value="Submit">
-        <button class="clickables">
-        <a href="/display_sum">Click to view result</a>
-        </button>
-    </form>
+<style>
+    h1 {
+        font-family: Roboto, sans-serif
+    }
+</style>
+
+<head>
+    <h1 class="w3-margin-left w3-container w3-round-xlarge w3-teal" style="text-shadow:1px 1px 0 #444">Welcome to
+        the Calculator</h1>
+</head>
+
+<body>
+    <h2 class="w3-container w3-text-teal w3-sans-serif" style="text-shadow:1px 1px 0 #444">Enter numbers below</h2>
+</body>
+
+<form method="POST">
+    <label class="w3-margin-left w3-text-teal"><b>Number One:</b></label>
+    <input class="w3-animate-input w3-margin-left w3-input w3-border w3-round-large" style="width:30%" type="text"
+        id="num1" name="num1"><br><br>
+
+    <label class="w3-margin-left w3-text-teal"><b>Number Two:</b></label>
+    <input class="w3-animate-input w3-margin-left w3-input w3-border w3-round-large" style="width:30%" type="text"
+        id="num2" name="num2"><br><br>
+
+    <input class="w3-radio w3-margin-left" type="radio" name="operation" value="add" checked>
+    <label>Add</label>
+
+    <input class="w3-radio" type="radio" name="operation" value="subtract">
+    <label>Subtract</label>
+
+    <input class="w3-radio" type="radio" name="operation" value="multiply">
+    <label>Multiply</label>
+
+    <input class="w3-radio" type="radio" name="operation" value="divide">
+    <label>Divide</label>
+
+    <input class="w3-button w3-teal w3-round-xlarge w3-margin-left" type="submit" value="Calculate!"><br><br>
+</form>
+{% if result %}
+<div class="w3-card w3-margin-left" style="width:30%">
+    <h4 class="w3-monospace w3-text-teal">The result is: {{ result }}</h4>
+</div>
+{% endif %}
+
 </html>

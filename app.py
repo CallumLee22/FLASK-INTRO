@@ -1,6 +1,4 @@
 from flask import Flask, render_template, request
-import json
-import os
 
 app = Flask(__name__)
 
@@ -13,31 +11,34 @@ def form():
 
     elif request.method == "POST":
         number1 = request.form.get("num1")
-        number3 = os.environ.get("NUMBER3")
-        number3 = int(number3)
 
         try:
             number1 = int(number1)
         except:
             return "Input was not a number"
 
-        num2 = request.form.get("num2")
+        number2 = request.form.get("num2")
         try:
-            num2 = int(num2)
+            number2 = int(number2)
         except:
             return "Input was not a number"
 
-        sum = number1 + num2 + number3
-        return json.dumps(
-            {"result": sum, "number1": number1, "number2": num2, "number3": number3},
-            indent=4,
-        )
+        operation = request.form.get("operation")
+
+        try:
+            if operation == "add":
+                result = number1 + number2
+            elif operation == "subtract":
+                result = number1 - number2
+            elif operation == "multiply":
+                result = number1 * number2
+            else:
+                result = number1 / number2
+        except:
+            result = 0
+
+        return render_template("calc.jinja", result=result)
 
 
-@app.route("/display_sum")
-def display_sum():
-    with app.app_context():
-        return render_template("display_sum.jinja")
-
-
-app.run()
+if __name__ == "__main__":
+    app.run()

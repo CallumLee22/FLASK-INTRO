@@ -28,16 +28,22 @@ def form():
         try:
             if operation == "add":
                 result = number1 + number2
+                op = "+"
             elif operation == "subtract":
                 result = number1 - number2
+                op = "-"
             elif operation == "multiply":
                 result = number1 * number2
+                op = "*"
             else:
                 result = number1 / number2
+                op = "/"
         except:
             result = 0
 
-        return render_template("calc.jinja", result=result)
+        return render_template(
+            "calc.jinja", result=result, number1=number1, number2=number2, op=op
+        )
 
 
 if __name__ == "__main__":

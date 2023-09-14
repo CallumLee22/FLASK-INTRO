@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash
 
 app = Flask(__name__)
+app.secret_key = "secret key"
 
 
 @app.route("/", methods=["POST", "GET"])
@@ -15,13 +16,15 @@ def form():
         try:
             number1 = float(number1)
         except:
-            return render_template("error.jinja")
+            flash("Invalid input")
+            return render_template("calc.jinja")
 
         number2 = request.form.get("num2")
         try:
             number2 = float(number2)
         except:
-            return render_template("error.jinja")
+            flash("Invalid input")
+            return render_template("calc.jinja")
 
         operation = request.form.get("operation")
 
@@ -39,7 +42,8 @@ def form():
                 result = number1 / number2
                 operation = "/"
         except:
-            return render_template("math error.jinja")
+            flash("Math error: cannot divide by zero")
+            return render_template("calc.jinja")
 
         return render_template(
             "calc.jinja",

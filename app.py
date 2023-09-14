@@ -39,7 +39,7 @@ def form():
                 result = number1 / number2
                 operation = "/"
         except:
-            result = 0
+            return render_template("math error.jinja")
 
         return render_template(
             "calc.jinja",

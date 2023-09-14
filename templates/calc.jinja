@@ -2,6 +2,19 @@
 <html>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+<style>
+    img {
+        float: left;
+        margin-left: 900px;
+        margin-bottom: 200px
+    }
+
+    h4 {
+        margin-left: 400px;
+        margin-top: 75px;
+    }
+</style>
+
 <title>Calculator</title>
 
 <head>
@@ -39,8 +52,13 @@
 </form>
 
 {% if result %}
-<div class="w3-container w3-margin-left w3-teal" style="width:30%">
-    <h4 class="w3-monospace w3-animate-left">{{ number1}} {{ op }} {{ number2 }} = {{ result }}</h4>
+<div class="w3-display-container">
+    <img src="https://www.pngmart.com/files/15/Scientific-Calculator-PNG-Transparent-HD-Photo.png">
+    <div class="w3-monospace w3-display-topmiddle">
+        <h4>{{ number1 }} {{ operation }} {{ number2
+            }} = {{
+            result }}</h4>
+    </div>
 </div>
 {% endif %}
 

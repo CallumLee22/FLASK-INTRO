@@ -51,6 +51,14 @@
     <input class="w3-button w3-teal w3-round-xlarge w3-margin-left" type="submit" value="Calculate!"><br><br>
 </form>
 
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<div class="w3-margin-left w3-panel w3-red" style="width: 30%">
+    <p class="w3-padding-large w3-round w3-text-white">{{ messages }}</p>
+</div>
+{% endif %}
+{% endwith %}
+
 <div class="w3-display-container">
     <img src="https://www.pngmart.com/files/15/Scientific-Calculator-PNG-Transparent-HD-Photo.png">
     {% if result %}

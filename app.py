@@ -28,21 +28,25 @@ def form():
         try:
             if operation == "add":
                 result = number1 + number2
-                op = "+"
+                operation = "+"
             elif operation == "subtract":
                 result = number1 - number2
-                op = "-"
+                operation = "-"
             elif operation == "multiply":
                 result = number1 * number2
-                op = "*"
+                operation = "*"
             else:
                 result = number1 / number2
-                op = "/"
+                operation = "/"
         except:
             result = 0
 
         return render_template(
-            "calc.jinja", result=result, number1=number1, number2=number2, op=op
+            "calc.jinja",
+            result=result,
+            number1=number1,
+            number2=number2,
+            operation=operation,
         )
 
 

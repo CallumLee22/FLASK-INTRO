@@ -1,55 +1,50 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-    img {
-        float: left;
-        margin-left: 900px;
-        margin-bottom: 200px
-    }
 
-    h4 {
-        margin-left: 400px;
-        margin-top: 75px;
-    }
 </style>
 
 <title>Calculator</title>
 
 <head>
-    <h1 class="w3-margin-left w3-margin-right w3-container w3-round-xlarge w3-teal" style="text-shadow:1px 1px 0 #444">
+    <h1 class="w3-margin-left w3-margin-right w3-container w3-round-xlarge w3-teal"
+        style="font-size:10vw text-shadow:1px 1px 0 #444">
         Welcome to
         the Calculator</h1>
 </head>
 
 <body>
-    <h2 class="w3-container w3-text-teal w3-sans-serif" style="text-shadow:1px 1px 0 #444">Enter numbers below</h2>
+    <h2 class="w3-container w3-text-teal w3-sans-serif" style="font-size:10vw text-shadow:1px 1px 0 #444">Enter numbers
+        below</h2>
 </body>
+<div class="w3-row">
+    <form method="POST">
+        <label class="w3-margin-left w3-text-teal"><b>Number One:</b></label>
+        <input class="w3-animate-input w3-margin-left w3-input w3-border w3-round-large" style="width:30%" type="text"
+            id="num1" name="num1"><br><br>
 
-<form method="POST">
-    <label class="w3-margin-left w3-text-teal"><b>Number One:</b></label>
-    <input class="w3-animate-input w3-margin-left w3-input w3-border w3-round-large" style="width:30%" type="text"
-        id="num1" name="num1"><br><br>
+        <label class="w3-margin-left w3-text-teal"><b>Number Two:</b></label>
+        <input class="w3-animate-input w3-margin-left w3-input w3-border w3-round-large" style="width:30%" type="text"
+            id="num2" name="num2"><br><br>
 
-    <label class="w3-margin-left w3-text-teal"><b>Number Two:</b></label>
-    <input class="w3-animate-input w3-margin-left w3-input w3-border w3-round-large" style="width:30%" type="text"
-        id="num2" name="num2"><br><br>
+        <input class="w3-radio w3-margin-left" type="radio" name="operation" value="add" checked>
+        <label class="w3-text-teal">Add</label>
 
-    <input class="w3-radio w3-margin-left" type="radio" name="operation" value="add" checked>
-    <label class="w3-text-teal">Add</label>
+        <input class="w3-radio" type="radio" name="operation" value="subtract">
+        <label class="w3-text-teal">Subtract</label>
 
-    <input class="w3-radio" type="radio" name="operation" value="subtract">
-    <label class="w3-text-teal">Subtract</label>
+        <input class="w3-radio" type="radio" name="operation" value="multiply">
+        <label class="w3-text-teal">Multiply</label>
 
-    <input class="w3-radio" type="radio" name="operation" value="multiply">
-    <label class="w3-text-teal">Multiply</label>
+        <input class="w3-radio" type="radio" name="operation" value="divide">
+        <label class="w3-text-teal">Divide</label>
 
-    <input class="w3-radio" type="radio" name="operation" value="divide">
-    <label class="w3-text-teal">Divide</label>
-
-    <input class="w3-button w3-teal w3-round-xlarge w3-margin-left" type="submit" value="Calculate!"><br><br>
-</form>
+        <input class="w3-button w3-teal w3-round-xlarge w3-margin-left" type="submit" value="Calculate!"><br><br>
+    </form>
+</div>
 
 {% with messages = get_flashed_messages() %}
 {% if messages %}
@@ -69,5 +64,7 @@
     </div>
     {% endif %}
 </div>
+
+
 
 </html>

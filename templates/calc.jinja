@@ -54,7 +54,7 @@
 {% with messages = get_flashed_messages() %}
 {% if messages %}
 <div class="w3-margin-left w3-panel w3-red" style="width: 30%">
-    <p class="w3-padding-large w3-round w3-text-white">{{ messages }}</p>
+    <p class="w3-padding-large w3-round w3-text-white">{{ messages[0] }}</p>
 </div>
 {% endif %}
 {% endwith %}

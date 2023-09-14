@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <title>Calculator</title>
 
-<style>
-    body {
-        background-image: url("https://www.nicepng.com/png/full/137-1378089_calculator-cliparts-calculator-clipart.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    img {
-        opacity: 0.5;
-    }
-</style>
-
 <head>
-    <h1 class="w3-margin-left w3-container w3-round-xlarge w3-teal" style="text-shadow:1px 1px 0 #444">Welcome to
+    <h1 class="w3-margin-left w3-margin-right w3-container w3-round-xlarge w3-teal" style="text-shadow:1px 1px 0 #444">
+        Welcome to
         the Calculator</h1>
 </head>
 
@@ -50,7 +40,7 @@
 
 {% if result %}
 <div class="w3-container w3-margin-left w3-teal" style="width:30%">
-    <h4 class="w3-monospace">{{ number1}} {{ op }} {{ number2 }} = {{ result }}</h4>
+    <h4 class="w3-monospace w3-animate-left">{{ number1}} {{ op }} {{ number2 }} = {{ result }}</h4>
 </div>
 {% endif %}
 

@@ -13,13 +13,13 @@ def form():
         number1 = request.form.get("num1")
 
         try:
-            number1 = int(number1)
+            number1 = float(number1)
         except:
             return render_template("error.jinja")
 
         number2 = request.form.get("num2")
         try:
-            number2 = int(number2)
+            number2 = float(number2)
         except:
             return render_template("error.jinja")
 

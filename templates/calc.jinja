@@ -51,15 +51,15 @@
     <input class="w3-button w3-teal w3-round-xlarge w3-margin-left" type="submit" value="Calculate!"><br><br>
 </form>
 
-{% if result %}
 <div class="w3-display-container">
     <img src="https://www.pngmart.com/files/15/Scientific-Calculator-PNG-Transparent-HD-Photo.png">
+    {% if result %}
     <div class="w3-monospace w3-display-topmiddle">
         <h4>{{ number1 }} {{ operation }} {{ number2
             }} = {{
             result }}</h4>
     </div>
+    {% endif %}
 </div>
-{% endif %}
 
 </html>

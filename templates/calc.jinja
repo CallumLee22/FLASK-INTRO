@@ -27,10 +27,10 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
-<body class="w3-content" style="max-width:1900px">
+<body class="w3-content" style="max-width:1920px">
 
     <div class="w3-row">
-        <div class="w3-half w3-container" style="max-height:1000px">
+        <div class="w3-half w3-container" style="height:600px">
             <div>
                 <h1 class="w3-margin-left w3-margin-right w3-container w3-round-xlarge w3-teal"
                     style="font-size:10vw text-shadow:1px 1px 0 #444">
@@ -45,33 +45,41 @@
                     <input class="w3-animate-input w3-margin-left w3-input w3-border w3-round-large" style="width:30%"
                         type="text" id="num2" name="num2"><br><br>
 
-                    <input class="w3-radio w3-margin-left" type="radio" name="operation" value="add" checked>
-                    <label class="w3-text-teal">Add</label>
-
-                    <input class="w3-radio" type="radio" name="operation" value="subtract">
-                    <label class="w3-text-teal">Subtract</label>
-
-                    <input class="w3-radio" type="radio" name="operation" value="multiply">
-                    <label class="w3-text-teal">Multiply</label>
-
-                    <input class="w3-radio" type="radio" name="operation" value="divide">
-                    <label class="w3-text-teal">Divide</label><br><br>
+                    <div>
+                        <input class="w3-radio w3-margin-left" type="radio" name="operation" id="add" value="add"
+                            checked>
+                        <label for="add" class="w3-text-teal">Add</label>
+                    </div>
+                    <div>
+                        <input class="w3-radio w3-margin-left" type="radio" name="operation" id="subtract "
+                            value="subtract">
+                        <label for="subtract" class="w3-text-teal">Subtract</label>
+                    </div>
+                    <div>
+                        <input class="w3-radio w3-margin-left" type="radio" name="operation" id="multiply"
+                            value="multiply">
+                        <label for="multiply" class="w3-text-teal">Multiply</label>
+                    </div>
+                    <div>
+                        <input class="w3-radio w3-margin-left" type="radio" name="operation" id="divide" value="divide">
+                        <label for="divide" class="w3-text-teal">Divide</label><br><br>
+                    </div>
 
                     <input class="w3-button w3-teal w3-round-xlarge w3-margin-left" type="submit"
-                        value="Calculate!"><br><br>
+                        value="Calculate!"><br>
                 </form>
             </div>
 
             {% with messages = get_flashed_messages() %}
             {% if messages %}
-            <div class="w3-margin-left w3-panel w3-red" style="width: 50%">
+            <div class="w3-margin-left w3-panel w3-red w3-margin-right" style="width: 70%">
                 <p class="message w3-padding-large w3-round w3-text-white">{{ messages[0] }}</p>
             </div>
             {% endif %}
             {% endwith %}
 
         </div>
-        <div class="calc w3-half w3-teal w3-display-container w3-mobile" style="height:1000px">
+        <div class="calc w3-half w3-display-container w3-teal" style="height: 1000px">
             {% if result %}
             <div class="result w3-monospace w3-display-topmiddle">
                 <h2>{{ number1 }} {{ operation }} {{ number2

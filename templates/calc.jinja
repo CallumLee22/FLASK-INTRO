@@ -38,8 +38,8 @@
                     the Calculator</h1>
                 <form method="POST" action="/" enctype="multipart/form-data">
                      {{ form.csrf_token }}
-                    <h4>{{ form.number1.label }} {{ form.number1(class="w3-input w3-round-xlarge w3-border w3-light-grey w3-margin-left") }}</h4>
-                    <h4>{{ form.number2.label }} {{ form.number2(class="w3-input w3-round-xlarge w3-border w3-light-grey w3-margin-left") }}</h4>
+                    <h4 class="w3-margin-left">{{ form.number1.label }} {{ form.number1(class="w3-input w3-round-xlarge w3-border w3-light-grey") }}</h4>
+                    <h4 class="w3-margin-left">{{ form.number2.label }} {{ form.number2(class="w3-input w3-round-xlarge w3-border w3-light-grey") }}</h4>
                     <h4>{{ form.operation() }}</h4>
                     <h4><input class="w3-button w3-teal w3-round-xlarge w3-margin-left" type="submit" value="Calculate!"></h4>
                  </form>
@@ -57,8 +57,7 @@
             {% if result %}
             <div class="result w3-monospace w3-display-topmiddle">
                 <h2>{{ number1 }} {{ operation }} {{ number2
-                    }} = {{
-                    result }}</h2>
+                    }} = {{ result }}</h2>
             </div>
             {% endif %}
         </div>

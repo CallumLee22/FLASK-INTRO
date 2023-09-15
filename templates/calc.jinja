@@ -36,40 +36,14 @@
                     style="font-size:10vw text-shadow:1px 1px 0 #444">
                     Welcome to
                     the Calculator</h1>
-                <form method="POST">
-                    <label class="w3-margin-left w3-text-teal"><b>Number One:</b></label>
-                    <input class="w3-animate-input w3-margin-left w3-input w3-border w3-round-large" style="width:30%"
-                        type="text" id="num1" name="num1"><br><br>
-
-                    <label class="w3-margin-left w3-text-teal"><b>Number Two:</b></label>
-                    <input class="w3-animate-input w3-margin-left w3-input w3-border w3-round-large" style="width:30%"
-                        type="text" id="num2" name="num2"><br><br>
-
-                    <div>
-                        <input class="w3-radio w3-margin-left" type="radio" name="operation" id="add" value="add"
-                            checked>
-                        <label for="add" class="w3-text-teal">Add</label>
-                    </div>
-                    <div>
-                        <input class="w3-radio w3-margin-left" type="radio" name="operation" id="subtract "
-                            value="subtract">
-                        <label for="subtract" class="w3-text-teal">Subtract</label>
-                    </div>
-                    <div>
-                        <input class="w3-radio w3-margin-left" type="radio" name="operation" id="multiply"
-                            value="multiply">
-                        <label for="multiply" class="w3-text-teal">Multiply</label>
-                    </div>
-                    <div>
-                        <input class="w3-radio w3-margin-left" type="radio" name="operation" id="divide" value="divide">
-                        <label for="divide" class="w3-text-teal">Divide</label><br><br>
-                    </div>
-
-                    <input class="w3-button w3-teal w3-round-xlarge w3-margin-left" type="submit"
-                        value="Calculate!"><br>
-                </form>
-            </div>
-
+                <form method="POST" action="/" enctype="multipart/form-data">
+                     {{ form.csrf_token }}
+                    <h4>{{ form.number1.label }} {{ form.number1(class="w3-input w3-round-xlarge w3-border w3-light-grey w3-margin-left") }}</h4>
+                    <h4>{{ form.number2.label }} {{ form.number2(class="w3-input w3-round-xlarge w3-border w3-light-grey w3-margin-left") }}</h4>
+                    <h4>{{ form.operation() }}</h4>
+                    <h4><input class="w3-button w3-teal w3-round-xlarge w3-margin-left" type="submit" value="Calculate!"></h4>
+                 </form>
+             </div>
             {% with messages = get_flashed_messages() %}
             {% if messages %}
             <div class="w3-margin-left w3-panel w3-red w3-margin-right" style="width: 70%">

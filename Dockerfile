@@ -1,4 +1,4 @@
-FROM python:3
+FROM python
 
 WORKDIR /app
 
@@ -10,4 +10,5 @@ COPY . .
 EXPOSE 5000
 
 COPY entrypoint.sh .
+RUN chmod u+x ./entrypoint.sh
 ENTRYPOINT ["./entrypoint.sh"]
